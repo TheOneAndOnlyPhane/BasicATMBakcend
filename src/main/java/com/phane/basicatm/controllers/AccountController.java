@@ -1,5 +1,6 @@
 package com.phane.basicatm.controllers;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.phane.basicatm.models.Account;
@@ -31,5 +32,15 @@ public class AccountController {
     @PutMapping("accounts/{id}")
     public void updateAccount(@PathVariable Long id, @RequestBody Account account) {
         accountService.updateAccount(account);
+    }
+
+    @GetMapping("accounts/{id}/balance")
+    public BigDecimal checkBalance(@PathVariable Long id) {
+        return accountService.checkBalance(id);
+    }
+
+    @PutMapping("accounts/{id}/balance")
+    public void updateBalance(@PathVariable Long id, BigDecimal funds) {
+        accountService.updateBalance(id, funds);
     }
 }
