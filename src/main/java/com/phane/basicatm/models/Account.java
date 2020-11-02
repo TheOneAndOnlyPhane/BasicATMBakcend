@@ -14,14 +14,14 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String owner;
 	private BigDecimal balance;
 
 	public Account() {}
 	
-	public Account(Long id, String name, BigDecimal balance) {
+	public Account(Long id, String owner, BigDecimal balance) {
 		this.id = id;
-		this.name = name;
+		this.owner = owner;
 		this.balance = balance;
 	}
 
@@ -33,12 +33,12 @@ public class Account {
 		this.id = id;
 	}
 
-	public String getName() {
-		return this.name;
+	public String getOwner() {
+		return this.owner;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setOwner(String owner) {
+		this.owner = owner;
 	}
 
 	public BigDecimal getBalance() {
